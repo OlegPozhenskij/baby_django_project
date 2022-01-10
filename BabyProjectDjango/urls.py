@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import first_page
+from crm import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', first_page),
+    path('', views.first_page),
 ]
 
 
