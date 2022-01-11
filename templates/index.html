@@ -10,6 +10,17 @@
     <body>
         <h1>New Landing Page</h1>
 
+
+        <br><br><br>
+        <!-- action="./thanks_page/" - ТАК НЕ НУЖНО! -->
+            <form action="{% url 'thanks_page' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">ОТПРАВИТЬ</button>
+            </form>
+        <br><br><br>
+
+
         {% if object_list %}
             <table border="1">
                 <tr>
