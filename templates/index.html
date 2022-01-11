@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
+<!-- загружаем статические файлы-->
+{% load static %}
+
 {% block content %}
+
+    <img src="{% static 'img\1.jpg'%}" height="300">
+
     <br>
         <h2>Данные из индекса!</h2>
     <br>
