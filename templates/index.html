@@ -1,46 +1,9 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>New Landing Page</h1>
+{% extends 'base.html' %}
 
+{% block content %}
+    <br>
+        <h2>Данные из индекса!</h2>
+    <br>
 
-        <br><br><br>
-        <!-- action="./thanks_page/" - ТАК НЕ НУЖНО! -->
-            <form action="{% url 'thanks_page' %}" method="POST">
-                {% csrf_token %}
-                {{ form }}
-                <button type="submit">ОТПРАВИТЬ</button>
-            </form>
-        <br><br><br>
-
-
-        {% if object_list %}
-            <table border="1">
-                <tr>
-                    <th>ID</th>
-                    <th>Дата</th>
-                    <th>Имя</th>
-                    <th>Телефон</th>
-                </tr>
-                {% for obj in object_list %}
-                <tr>
-                    <th>{{ obj.id }}</th>
-                    <th>{{ obj.order_dt }}</th>
-                    <th>{{ obj.order_name }}</th>
-                    <th>{{ obj.order_phone }}</th>
-                </tr>
-                {% endfor %}
-            </table>
-        {% else %}
-        <р2>Данных нет</р2>
-        {% endif %}
-
-    </body>
-</html>
+    {% include 'index_old.html' %}
+{% endblock %}
