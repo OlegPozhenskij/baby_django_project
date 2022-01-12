@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from .models import Order
 from .forms import OrderForm
+from cms.models import CmsSlider
 
 
 def first_page(request):
-    object_list = Order.objects.all()
-    form = OrderForm()
+    slider_list = CmsSlider.objects.all() #get all objects from db
     '''Указываем параметры подачи в шаблон с помощью словаря'''
-    return render(request, './index.html', {'object_list': object_list,
-                                            'form': form})
+    return render(request, './index.html', {'slider_list': slider_list})
 
 
 def thanks_page(request):
